@@ -3,8 +3,6 @@
 
 This **allows death to still be punishing**, without the frustration of losing hard earned equipment nor having your lost items and experience stored in a rough spot.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UaSyrkj08nE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 # FEATURES
 - When you **die**, **all your equipment** and **half of your experience points** (configurable) is kept upon respawning.
 - **The rest of your items** are **stored within an Allay holding a chest** that is **spawned at your death location.**
