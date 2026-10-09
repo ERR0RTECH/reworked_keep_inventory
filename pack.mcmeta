@@ -1,0 +1,20 @@
+{
+  "id": "reworked_keep_inventory",
+  "pack": {
+    "description": [
+      {
+        "text": "Reworked Keep Inventory v1.0",
+        "color": "#ffcf28"
+      },
+      {
+        "text": "\n"
+      },
+      {
+        "text": "by ErrorTech",
+        "color": "#908b8b"
+      }
+    ],
+    "min_format": 121,
+		"max_format": 121
+  }
+}

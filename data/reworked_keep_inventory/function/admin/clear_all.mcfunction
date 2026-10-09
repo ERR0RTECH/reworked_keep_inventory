@@ -1,0 +1,2 @@
+# Function for admins to make all loaded Allays drop their inventory and disappear
+execute as @e[type=allay,tag=reworked_keep_inventory.allay] at @s run function reworked_keep_inventory:allay/drop_init
