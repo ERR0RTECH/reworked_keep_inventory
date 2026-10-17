@@ -1,8 +1,11 @@
 # Main function to spawn an Allay when a player dies
 advancement revoke @s only reworked_keep_inventory:die
 
+# Stops function if player is not in survival or adventure mode
+execute if entity @s[gamemode=!survival,gamemode=!adventure] run return 0
+
 # Spawns Allay and sets it to follow the owner
-summon allay ~ ~ ~ {Invulnerable:1b,PortalCooldown:2147483647,DeathLootTable:"empty",PersistenceRequired:1b,Health:1024f,DuplicationCooldown:2147483647,Tags:["reworked_keep_inventory.allay.init"],attributes:[{id:"minecraft:max_health",base:1024},{id:"minecraft:flying_speed",base:0.06}],equipment:{mainhand:{id:"minecraft:poisonous_potato",count:1,components:{"minecraft:custom_data":{reworked_keep_inventory.chest:1b},"minecraft:item_model":"minecraft:chest","minecraft:item_name":{"italic":false,"text":"Allay Chest"},"!minecraft:food":{},"!minecraft:consumable":{}}}}}
+summon allay ~ ~ ~ {Invulnerable:1b,PortalCooldown:-1L,DeathLootTable:"empty",PersistenceRequired:1b,Health:1024f,DuplicationCooldown:-1L,Tags:["reworked_keep_inventory.allay.init"],attributes:[{id:"minecraft:max_health",base:1024},{id:"minecraft:flying_speed",base:0.06}],equipment:{mainhand:{id:"minecraft:allay_spawn_egg",count:1,components:{"minecraft:custom_data":{reworked_keep_inventory.chest:1b},"minecraft:item_model":"minecraft:chest","minecraft:item_name":{"italic":false,"text":"Allay Chest"},"!minecraft:entity_data":{}}}}}
 data modify entity @e[type=allay,distance=0..1,limit=1,sort=nearest,tag=reworked_keep_inventory.allay.init] Brain.memories."minecraft:liked_player".value set from entity @s UUID
 
 # Failsafe if no Allay
@@ -13,7 +16,7 @@ execute unless entity @e[type=allay,distance=0..1,limit=1,sort=nearest,tag=rewor
 function reworked_keep_inventory:damage_gear
 
 # Clears all items with Curse of Vanishing
-clear @s *[enchantments~[{enchantments: "vanishing_curse"}]]
+clear @s *[enchantments~[{enchantments:"vanishing_curse"}]]
 
 # XP Penalty
 execute store result score @s reworked_keep_inventory.xp.points run xp query @s points
